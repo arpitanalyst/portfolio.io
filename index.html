@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Arpit Sharma | Data Analyst Portfolio</title>
+<meta name="description" content="Arpit Sharma is a Data Analyst and Computer Science student skilled in SQL, Python, Excel, Power BI, PostgreSQL and Data Visualization." />
+<meta name="author" content="Arpit Sharma" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Arpit Sharma | Data Analyst Portfolio" />
+<meta property="og:description" content="Data Analyst & Computer Science student skilled in SQL, Python, Excel, Power BI, PostgreSQL and Data Visualization." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/images/ChatGPT Image Aug 8, 2026, 11_55_59 AM(1).png" />
+
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a href="#home" class="skip-link">Skip to content</a>
+
+<!-- Background 3D canvas (full page, behind everything) -->
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<!-- ============================== NAVBAR ============================== -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-brand" aria-label="Arpit Sharma — home">
+      <span class="brand-mark">AS</span>
+      <span class="brand-text">
+        <span class="brand-name">Arpit Sharma</span>
+        <span class="brand-role">Data Analyst</span>
+      </span>
+    </a>
+
+    <nav class="nav-links" id="nav-links" aria-label="Primary">
+      <a href="#home" class="active" data-nav>Home</a>
+      <a href="#about" data-nav>About</a>
+      <a href="#skills" data-nav>Skills</a>
+      <a href="#projects" data-nav>Projects</a>
+      <a href="#experience" data-nav>Experience</a>
+      <a href="#education" data-nav>Education</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="icon-btn" id="linkedin-link-1" href="https://in.linkedin.com/in/arpit-sharma-39451b352" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+      </a>
+      <a class="icon-btn" id="github-link-1" href="https://github.com/arpitanalyst" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.17c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .3z"/></svg>
+      </a>
+      <button class="icon-btn" id="theme-toggle" aria-label="Toggle light and dark theme">
+        <svg id="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu-backdrop" id="menu-backdrop"></div>
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile">
+  <a href="#home" data-nav>Home</a>
+  <a href="#about" data-nav>About</a>
+  <a href="#skills" data-nav>Skills</a>
+  <a href="#projects" data-nav>Projects</a>
+  <a href="#experience" data-nav>Experience</a>
+  <a href="#education" data-nav>Education</a>
+  <a href="#contact" data-nav>Contact</a>
+  <div class="mobile-social">
+    <a class="icon-btn" href="https://in.linkedin.com/in/arpit-sharma-39451b352" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+    </a>
+    <a class="icon-btn" href="https://github.com/arpitanalyst" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.17c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.6-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.58A12 12 0 0 0 12 .3z"/></svg>
+    </a>
+  </div>
+</nav>
+
+<main id="home">
+
+<!-- ================================ HERO ================================ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="hero-badge glass"><span class="dot"></span> Fresher | Data Analyst</span>
+      <h1 class="hero-name">ARPIT<br/>SHARMA</h1>
+      <p class="hero-role">DATA ANALYST</p>
+      <p class="hero-tagline">Turning Data into Insights, Decisions into Impact.</p>
+      <p class="hero-desc">Hi, I'm Arpit Sharma, a passionate Data Analyst focused on transforming raw data into meaningful insights and helping businesses make data-driven decisions.</p>
+
+      <div class="hero-actions">
+        <a href="https://github.com/arpitanalyst" class="btn btn-primary" id="cta-projects">View My Projects →</a>
+        <a href="https://www.pdffiller.com/s/EXbP-lRcy" class="btn btn-outline" id="cta-resume" download>Download Resume ↓</a>
+      </div>
+
+      <div class="hero-stack">
+        <span class="stack-pill">SQL</span>
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">Excel</span>
+        <span class="stack-pill">Power BI</span>
+        <span class="stack-pill">Data Visualization</span>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="hero-visual">
+      <div class="visual-stage" id="visual-stage">
+        <canvas class="hero-canvas-3d" id="hero-canvas"></canvas>
+
+        <div class="profile-frame" id="profile-frame">
+          <img src="assets/images/portfolio_pro_light_1084x1448.png" alt="Arpit Sharma, Data Analyst"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="img-fallback" style="display:none;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg>
+            Place your photo at<br/>assets/images/image.png
+          </div>
+        </div>
+
+        <div class="hud-card hud-sql glass">
+          <span class="hud-icon">SQL</span>
+          <span><span class="hud-label">Query engine</span><br/><span class="hud-value">Active</span></span>
+        </div>
+        <div class="hud-card hud-python glass">
+          <span class="hud-icon">PY</span>
+          <span><span class="hud-label">Pandas / NumPy</span><br/><span class="hud-value">Processing</span></span>
+        </div>
+        <div class="hud-card hud-powerbi glass">
+          <span class="hud-icon">BI</span>
+          <span><span class="hud-label">Power BI</span><br/><span class="hud-value">Dashboard live</span></span>
+        </div>
+        <div class="hud-card hud-excel glass">
+          <span class="hud-icon">XL</span>
+          <span><span class="hud-label">Excel</span><br/><span class="hud-value">Report synced</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <span class="mouse"></span>
+    Scroll
+  </div>
+</section>
+
+<!-- ================================ ABOUT ================================ -->
+<section id="about">
+  <div class="container">
+    <span class="section-tag">About Me</span>
+    <h2 class="section-heading">Who I Am</h2>
+
+    <div class="about-grid">
+      <div class="about-card glass reveal-up">
+        <div class="about-photo">
+          <img src="assets/images/ChatGPT Image Aug 8, 2026, 11_55_59 AM(1).png" alt="Arpit Sharma"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="img-fallback" style="display:none;">AS</div>
+        </div>
+        <p class="about-name">Arpit Sharma</p>
+        <p class="about-role">Fresher / Student</p>
+
+        <div class="about-info-list">
+          <div class="about-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <span><span class="label">Status</span><br/><span class="value">Building skills and practical experience</span></span>
+          </div>
+          <div class="about-info-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><span class="label">Location</span><br/><span class="value">SPN, Uttar Pradesh, India</span></span>
+          </div>
+        </div>
+
+        <p class="about-info-item label" style="margin-bottom:10px; font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted);">Focus</p>
+        <div class="about-focus">
+          <span class="focus-chip">Data Analytics</span>
+          <span class="focus-chip">SQL</span>
+          <span class="focus-chip">Python</span>
+          <span class="focus-chip">Excel</span>
+          <span class="focus-chip">Power BI</span>
+          <span class="focus-chip">Data Visualization</span>
+        </div>
+      </div>
+
+      <div class="about-body reveal-up">
+        <p class="lead">I am Arpit Sharma, a Data Analytics enthusiast and B.Tech Computer Science student. I work with SQL, Python, Excel, Power BI and data visualization to transform raw datasets into meaningful insights.</p>
+        <p>I am currently building practical project experience through real-world data analysis projects, dashboard development, data cleaning and exploratory data analysis.</p>
+
+        <div class="about-metrics">
+          <div class="metric-box glass">
+            <div class="metric-num">13+</div>
+            <div class="metric-label">Analytics Projects</div>
+          </div>
+          <div class="metric-box glass">
+            <div class="metric-num">13</div>
+            <div class="metric-label">Core Tools & Skills</div>
+          </div>
+          <div class="metric-box glass">
+            <div class="metric-num">2028</div>
+            <div class="metric-label">Graduating Year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ SKILLS ================================ -->
+<section id="skills">
+  <div class="container">
+    <span class="section-tag">Skills</span>
+    <h2 class="section-heading">Tools I Work With</h2>
+    <p class="section-sub">A practical toolkit for cleaning, querying, analyzing and visualizing data end to end.</p>
+
+    <div class="skills-grid" id="skills-grid">
+      <!-- Skill cards injected by main.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ================================ PROJECTS ================================ -->
+<section id="projects">
+  <div class="container">
+    <span class="section-tag">Projects</span>
+    <h2 class="section-heading">Featured Analysis Projects</h2>
+    <p class="section-sub">Real-world datasets, turned into dashboards, KPIs and business insights.</p>
+
+    <div class="projects-grid" id="projects-grid">
+      <!-- Project cards injected by main.js from data/projects.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ================================ EXPERIENCE ================================ -->
+<section id="experience">
+  <div class="container">
+    <span class="section-tag">Experience</span>
+    <h2 class="section-heading">Data Analytics Project Experience</h2>
+    <div class="exp-intro">
+      <p>Practical experience developed through Data Analytics projects using SQL, Python, Excel and Power BI.</p>
+    </div>
+
+    <div class="timeline" id="experience-timeline">
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <h3>Data Cleaning</h3>
+          <p>Handling missing values, duplicates and inconsistent formats to build reliable datasets.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <h3>Exploratory Data Analysis</h3>
+          <p>Investigating distributions, trends and relationships before drawing conclusions.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <h3>SQL Analysis</h3>
+          <p>Writing structured queries to extract, join and aggregate data across tables.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <h3>Dashboard Development</h3>
+          <p>Building interactive Power BI dashboards for stakeholders to explore findings.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <h3>KPI Analysis</h3>
+          <p>Defining and tracking key performance indicators aligned with business goals.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <h3>Data Visualization</h3>
+          <p>Presenting findings through clear, effective charts and visual stories.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card glass">
+          <h3>Business Insights</h3>
+          <p>Translating analysis into recommendations that support decision-making.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ EDUCATION ================================ -->
+<section id="education">
+  <div class="container">
+    <span class="section-tag">Education</span>
+    <h2 class="section-heading">Academic Background</h2>
+
+    <div class="edu-grid">
+      <div class="edu-card glass reveal-up">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+        </div>
+        <p class="edu-period">2024 — 2028</p>
+        <h3 class="edu-degree">B.Tech, Computer Science</h3>
+        <p class="edu-school">Future University, Bareilly</p>
+        <span class="edu-score">In progress</span>
+      </div>
+
+      <div class="edu-card glass reveal-up">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <p class="edu-period">Class 12th</p>
+        <h3 class="edu-degree">Higher Secondary</h3>
+        <p class="edu-school">RDBR Inter College, Jaitipur</p>
+        <span class="edu-score">65%</span>
+      </div>
+
+      <div class="edu-card glass reveal-up">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <p class="edu-period">Class 10th</p>
+        <h3 class="edu-degree">Secondary</h3>
+        <p class="edu-school">RDBR Inter College, Jaitipur</p>
+        <span class="edu-score">70%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ CONTACT ================================ -->
+<!-- ================================ CONTACT ================================ -->
+
+<section id="contact" class="contact-section">
+
+  <div class="container">
+
+    <div class="contact-heading reveal-up">
+      <span class="section-tag">Contact</span>
+
+      <h2>
+        Let's Connect & 
+        <span class="gradient-text">Work With Data</span>
+      </h2>
+
+      <p>
+        Have a project, opportunity or collaboration in mind?
+        Let's connect.
+      </p>
+    </div>
+
+
+    <div class="contact-grid">
+
+      <!-- Contact Information -->
+      <div class="contact-info reveal-up">
+
+        <div class="contact-card glass">
+          <span class="contact-icon">✦</span>
+
+          <h3>Let's Talk</h3>
+
+          <p>
+            I'm always open to discussing Data Analytics,
+            projects, internships and new opportunities.
+          </p>
+        </div>
+
+
+        <div class="contact-socials">
+
+          <!-- LinkedIn -->
+          <a
+            class="social-link glass"
+            href="https://in.linkedin.com/in/arpit-sharma-39451b352"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="social-icon linkedin-icon">in</span>
+            <span>LinkedIn</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+
+          <!-- GitHub -->
+          <a
+            class="social-link glass"
+            href="https://github.com/arpitanalyst"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="social-icon github-icon">⌘</span>
+            <span>GitHub</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- Contact Form -->
+      <form
+        class="contact-form glass reveal-up"
+        id="contact-form"
+        novalidate
+      >
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your name"
+            />
+          </div>
+
+
+          <div class="form-group">
+            <label for="email">Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+            />
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="message">Message</label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            placeholder="Tell me about the opportunity..."
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary contact-submit"
+        >
+          Send Message
+          <span>→</span>
+        </button>
+
+
+        <p
+          class="form-status"
+          id="form-status"
+          role="status"
+        ></p>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<!-- ================================ FOOTER ================================ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-left">
+      <p>© 2026 Arpit Sharma. All Rights Reserved.</p>
+      <p>Data Analyst | SPN, Uttar Pradesh, India</p>
+    </div>
+    <div class="footer-social">
+      <a class="icon-btn" href="https://in.linkedin.com/in/arpit-sharma-39451b352" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+      </a>
+      <a class="icon-btn" href="https://github.com/arpitanalyst" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.17c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.66-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 １ 6 0c2.3-１。５５ ３。３-１。２３ ３。３-１。２３。６６ １。６６。２４ ２。８８。１２ ３。１８。７７。８４ １。２３ １。９１ １。２３ ３。２２ ０ ４。６-２。８１ ５。６３-５。４８ ５。９２。４３。３７。８１ １。１。８１ ２。２２v３。２９c０ 。３２。２２ 。６９。８３ 。５８A１２ １２ ０ ０ ０ １２ 。３z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================================ SCRIPTS ================================ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="data/projects.js"></script>
+<script src="js/three-scene.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
